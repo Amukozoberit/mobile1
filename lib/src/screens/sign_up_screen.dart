@@ -19,8 +19,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
       child: Column(children: [
         Expanded(
           child: Container(
-            height: 200,
             color: Colors.white,
+            child: Image.asset(
+              'images/logos/fm.jpg',
+              fit: BoxFit.cover,
+            ),
           ),
         ),
         Expanded(
