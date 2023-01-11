@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'src/screens/otp_screen.dart';
 import 'src/screens/sign_up_screen.dart';
+import 'src/screens/welcome_screen(test).dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +19,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SignUpScreen(),
+       themeMode: ThemeMode.dark,
+      home: const WelcomeTestScreen(),
     );
   }
 }
