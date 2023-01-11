@@ -94,7 +94,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       fontWeight: FontWeight.bold,
                       color: Colors.deepPurple),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30.0,
                 ),
                 MaterialButton(
@@ -104,10 +104,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       MaterialPageRoute(builder: (context) => OTPScreen()),
                     );
                   },
+                  color: Colors.blue,
                   child: Text(
                     'Tap Here',
                   ),
-                  color: Colors.blue,
                 ),
               ],
             ),
