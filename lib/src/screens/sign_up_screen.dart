@@ -20,19 +20,23 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kkYellowColor,
       body: Column(
         children: [
-          Container(
-            height: MediaQuery.of(context).size.height / 2,
-            width: MediaQuery.of(context).size.width,
-            color: Colors.white,
-            child: Padding(
-              padding: const EdgeInsets.all(100.0),
-              child: Image.asset(
-                FUNDMASTER_LOGO,
-                fit: BoxFit.contain,
-                height: 50,
-                width: 50,
+          ClipPath(
+            clipper: CustomClipPath(),
+            child: Container(
+              height: MediaQuery.of(context).size.height / 2,
+              width: MediaQuery.of(context).size.width,
+              color: Colors.white,
+              child: Padding(
+                padding: const EdgeInsets.all(100.0),
+                child: Image.asset(
+                  FUNDMASTER_LOGO,
+                  fit: BoxFit.contain,
+                  height: 40,
+                  width: 40,
+                ),
               ),
             ),
           ),
@@ -88,7 +92,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   height: 10.0,
                 ),
                 const Text(
-                  'Forgot your password?',
+                  'Forgot password?',
                   style: TextStyle(
                       fontSize: 15.0,
                       fontWeight: FontWeight.bold,
@@ -105,7 +109,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     );
                   },
                   color: Colors.blue,
-                  child: Text(
+                  child: const Text(
                     'Tap Here',
                   ),
                 ),
@@ -121,26 +125,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
 class CustomClipPath extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
-    double w = size.width;
-    double h = size.height;
-
-    final path = Path();
-    path.lineTo(0, h);
-
+    var path = Path();
+    path.lineTo(0, size.height);
     path.quadraticBezierTo(
-      w * 1.0,
-      h - 100,
-      w,
-      h,
-    );
-    path.lineTo(w, h);
+        size.width / 2, size.height - 100, size.width, size.height);
+    path.lineTo(size.width, 0);
     path.close();
-
     return path;
   }
 
   @override
-  bool shouldReclip(covariant CustomClipper<Path> oldClipper) {
-    return false;
-  }
+  bool shouldReclip(covariant CustomClipper<Path> oldClipper) => false;
 }
