@@ -13,10 +13,9 @@ class _OTPScreenState extends State<OTPScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple,
-      body: Center(
-        child: Text('OTP Screen'),
-      ),
+    body: Column(children: [
+      
+    ]),
     );
   }
 }

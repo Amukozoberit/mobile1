@@ -48,25 +48,27 @@ class _SignUpScreenState extends State<SignUpScreen> {
               15.0,
             ),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+//crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(
-                  height: 10.0,
+                  height: 3.0,
                 ),
                 const Text(
                   'Login',
                   style: TextStyle(
-                      fontSize: 35.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.deepPurple),
+                    fontSize: 35.0,
+                    fontWeight: FontWeight.bold,
+                    color: kkLoginHeaderColor,
+                  ),
                 ),
                 const SizedBox(
-                  height: 5.0,
+                  height: 15.0,
                 ),
                 TextField(
                   decoration: InputDecoration(
                       border: const OutlineInputBorder(),
                       hintText: 'Enter your phone number',
+                      labelText: 'Phone number',
                       prefixIcon: IconButton(
                         icon: const Icon(
                           Icons.phone,
@@ -75,12 +77,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       )),
                 ),
                 const SizedBox(
-                  height: 5.0,
+                  height: 15.0,
                 ),
                 TextField(
+                  obscureText: true,
                   decoration: InputDecoration(
                       border: const OutlineInputBorder(),
                       hintText: 'Enter your password',
+                      labelText: 'Password',
                       prefixIcon: IconButton(
                         icon: const Icon(
                           Icons.wifi_password,
@@ -92,11 +96,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   height: 10.0,
                 ),
                 const Text(
+                  textAlign: TextAlign.right,
                   'Forgot password?',
                   style: TextStyle(
-                      fontSize: 15.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.deepPurple),
+                    fontSize: 15.0,
+                    fontWeight: FontWeight.bold,
+                    color: kkLoginHeaderColor,
+                  ),
                 ),
                 const SizedBox(
                   height: 30.0,
